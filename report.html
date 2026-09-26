@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Report an Item — Campus Lost &amp; Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/csi-logo.png" alt="Computer Society of India logo" />
+        <span class="brand-text">
+          <strong>Campus Lost &amp; Found</strong>
+          <span>CSI AITR Recruitment Task</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Browse</a></li>
+        <li><a href="report.html" class="active nav-cta">Report an item</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="form-page">
+    <h2>Report a lost or found item</h2>
+    <p style="color:var(--ink-soft); margin-top:-6px;">
+      Add as much detail as you can — it makes matching a lost item to its owner much faster.
+    </p>
+
+    <form class="form-card" id="reportForm" novalidate>
+      <div class="field">
+        <label>Is this a lost or a found item?</label>
+        <div class="type-toggle">
+          <label>
+            <input type="radio" name="itemType" value="lost" />
+            <span>🔴 Lost — I lost this</span>
+          </label>
+          <label>
+            <input type="radio" name="itemType" value="found" />
+            <span>🟢 Found — I found this</span>
+          </label>
+        </div>
+        <div class="field-error" id="typeToggleError" style="display:none;">Choose one option.</div>
+      </div>
+
+      <div class="field">
+        <label for="f-name">Item name</label>
+        <input type="text" id="f-name" name="name" placeholder="e.g. Black Wireless Earbuds" />
+        <div class="field-error"></div>
+      </div>
+
+      <div class="field">
+        <label for="f-category">Category</label>
+        <select id="f-category" name="category">
+          <option value="">Select a category</option>
+          <option>Electronics</option>
+          <option>ID Cards</option>
+          <option>Books</option>
+          <option>Accessories</option>
+          <option>Other</option>
+        </select>
+        <div class="field-error"></div>
+      </div>
+
+      <div class="field">
+        <label for="f-location">Location</label>
+        <select id="f-location" name="location">
+          <option value="">Select a location</option>
+        </select>
+        <div class="field-error"></div>
+      </div>
+
+      <div class="field">
+        <label for="f-date">Date <span class="hint">— when it was lost or found</span></label>
+        <input type="date" id="f-date" name="date" />
+        <div class="field-error"></div>
+      </div>
+
+      <div class="field">
+        <label for="f-description">Description</label>
+        <textarea id="f-description" name="description" placeholder="Colour, brand, any identifying marks, exact spot, etc."></textarea>
+        <div class="field-error"></div>
+      </div>
+
+      <div class="field">
+        <label for="f-image">Photo <span class="hint">— optional</span></label>
+        <input type="file" id="f-image" name="image" accept="image/*" />
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Submit report</button>
+        <button type="reset" class="btn btn-ghost">Reset form</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    Built for the CSI AITR Software Development recruitment task · Vanilla HTML, CSS &amp; JS · Data stored locally in your browser
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
